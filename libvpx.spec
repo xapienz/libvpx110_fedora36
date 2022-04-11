@@ -3,7 +3,7 @@
 %global sotiny  0
 %global soversion %{somajor}.%{sominor}.%{sotiny}
 
-Name:			libvpx
+Name:			libvpx_1.10
 Summary:		VP8/VP9 Video Codec SDK
 Version:		1.10.0
 Release:		2%{?dist}
@@ -99,7 +99,8 @@ CROSS=armv7hl-redhat-linux-gnueabi- CHOST=armv7hl-redhat-linux-gnueabi-hardfloat
 --enable-shared \
 %endif
 --enable-install-srcs \
---prefix=%{_prefix} --libdir=%{_libdir} --size-limit=16384x16384
+--prefix=%{_prefix} --libdir=%{_libdir} --size-limit=16384x16384 \
+--disable-unit-tests
 
 %ifarch armv7hl
 #hackety hack hack
